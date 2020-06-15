@@ -1,9 +1,7 @@
-class Movie
-    attr_accessor :name
-    attr_accessor :director
+class Movie < ApplicationRecord
+    validates_presence_of :title
 
-    def initialize(name, director)
-        @name = name
-        @director = director
+    def self.all
+        find_by_sql('SELECT * FROM "movies")
     end
 end
