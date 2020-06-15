@@ -4,7 +4,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :title
       t.integer :facebook_likes
       t.string :year
-      t.string :plot_keyworks
+      t.string :plot_keywords
       t.string :director
     end
   end

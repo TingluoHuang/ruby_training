@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_184034) do
+ActiveRecord::Schema.define(version: 2020_06_15_193331) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "facebook_likes"
     t.string "year"
-    t.string "plot_keyworks"
+    t.string "plot_keywords"
     t.string "director"
   end
 
