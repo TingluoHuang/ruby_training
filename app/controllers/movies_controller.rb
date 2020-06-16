@@ -1,7 +1,18 @@
 class MoviesController < ApplicationController
     def show
-        m = Movie.find(params[:id])
-        @title = m.title
-        @director = m.director
+        movie = Movie.find(params[:id])
+        render :show, locals: { movie: movie }
+    end
+
+    def index
+        movies = Movie.all()
+        render :index, locals: { movies: movies }
+    end
+
+    def create
+        params.permit!
+        movie = Movie.new(params[:movie])
+        movie.save
+        render :show, locals: { movie: movie }
     end
 end

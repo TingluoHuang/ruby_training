@@ -1,0 +1,12 @@
+<%= form_for :movie do |m| %>
+  <%= m.label :title %>:
+  <%= m.text_field :title %><br />
+
+  <%= m.label :director %>:
+  <%= m.text_field :director %><br />
+
+  <%= m.submit %>
+<% end %>
+
+<h3><%= movies.to_a{|m| m.title; m.director} %></h3>
+
