@@ -8,5 +8,9 @@
   <%= m.submit %>
 <% end %>
 
-<h3><%= movies.to_a{|m| m.title; m.director} %></h3>
+
+<% movies.each do |m| %>
+  <%= m.title %>
+  <%= m.director %>
+<% end %>
 
