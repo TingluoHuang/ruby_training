@@ -7,9 +7,10 @@ class MovieTest < ActiveSupport::TestCase
     end
 
     test "movie is valid with a title" do
-        movie = Movie.new(title: "Parasite", director: "Bong Joon-ho")
+        director = Director.new(name: "Bong Joon-ho", age: 50);
+        movie = Movie.new(title: "Parasite", director: director)
         assert_equal movie.title, "Parasite"
-        assert_equal movie.director, "Bong Joon-ho"
+        assert_equal movie.director.name, "Bong Joon-ho"
     end
 
     test "movie is not valid with a title" do
@@ -18,7 +19,7 @@ class MovieTest < ActiveSupport::TestCase
     end
 
     test "return movie titles" do
-        assert_equal 4997, Movie.titles().count
+        assert_equal 5043, Movie.titles().count
     end
 
     test "test movie facebook_likes" do
@@ -30,7 +31,12 @@ class MovieTest < ActiveSupport::TestCase
     end
 
     test "test movie more than like" do
-        assert_equal 2823, Movie.more_than_likes(0)
+        assert_equal 2862, Movie.more_than_likes(0)
+    end
+
+    test "test most liked by director name and plot" do
+        movie = Movie.most_liked_by_director_name_and_plot("Christopher Nolan", "foul play")
+        assert_equal "Memento", movie.title
     end
 end
 

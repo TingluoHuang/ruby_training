@@ -1,5 +1,5 @@
 class Director < ApplicationRecord
-    validates_presence_of :name
+    #validates_presence_of :name
     has_many :movies
     # def self.titles
     #     Movie.pluck(:title)
