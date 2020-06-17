@@ -35,7 +35,7 @@ class MovieTest < ActiveSupport::TestCase
     end
 
     test "test most liked by director name and plot" do
-        movie = Movie.most_liked_by_director_name_and_plot("Christopher Nolan", "foul play")
+        movie = Movie.most_liked_by_director_name_and_plot("Christopher Nolan", "foul play").first
         assert_equal "Memento", movie.title
     end
 end
