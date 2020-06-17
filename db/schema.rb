@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_145700) do
+ActiveRecord::Schema.define(version: 2020_06_16_200911) do
 
   create_table "directors", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_145700) do
     t.string "year"
     t.string "plot_keywords"
     t.integer "director_id"
+    t.integer "color_format", default: 0
     t.index ["director_id"], name: "index_movies_on_director_id"
   end
 

@@ -2,6 +2,8 @@ class Movie < ApplicationRecord
     belongs_to :director
     validates_presence_of :title
 
+    enum color_format: [:color, :black_and_white]
+
     def self.titles
         Movie.pluck(:title)
     end

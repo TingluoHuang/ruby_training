@@ -19,7 +19,7 @@ class MovieTest < ActiveSupport::TestCase
     end
 
     test "return movie titles" do
-        assert_equal 5043, Movie.titles().count
+        assert_equal 5045, Movie.titles().count
     end
 
     test "test movie facebook_likes" do
@@ -31,7 +31,7 @@ class MovieTest < ActiveSupport::TestCase
     end
 
     test "test movie more than like" do
-        assert_equal 2862, Movie.more_than_likes(0)
+        assert_equal 2864, Movie.more_than_likes(0)
     end
 
     test "test most liked by director name and plot" do
