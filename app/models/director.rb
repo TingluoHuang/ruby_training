@@ -16,4 +16,6 @@ class Director < ApplicationRecord
     # def self.more_than_likes(likes)
     #     Movie.where("facebook_likes > ?", likes).count
     # end
+
+    scope :by_name, -> (director_name) { where(name: director_name) }
 end

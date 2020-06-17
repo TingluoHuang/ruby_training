@@ -24,12 +24,12 @@ class MoviewSystemTest < ApplicationSystemTestCase
         movie = create(:movie, title:"Titanic", director:director)
 
         # movie.save!
-        movie = Movie.find_by(title: movie.title)
+        # movie = Movie.find_by(title: movie.title)
         # attributes = { title: "Titanic", director: "James Cameron" }
         # movie = Movie.create(attributes)
 
         # visit "/movies/#{movie.id}"
-        visit movie_path(movie.id)
+        visit movie_path(movie)
         
         assert_text "Titanic"
         assert_text "James Cameron"

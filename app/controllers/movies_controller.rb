@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
     def index
-        movies = Movie.all
+        movies = Movie.includes(:director).limit(10)
         render :index, locals: { movies: movies }
     end
 
